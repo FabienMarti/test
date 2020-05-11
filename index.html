@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Abo Style ASOS</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body class="container">  
+        <h1 class="text-center">TITRE</h1>
+        <div class="row text-center">
+            <div class="col-4 mx-auto border" onclick="swap(0)"><h2>S'abonner</h2></div>
+            <div class="col-4 mx-auto border" onclick="swap(1)"><h2>S'inscrire</h2></div>
+            <div class="col-4 mx-auto border" onclick="swap(2)"><h2>Se connecter</h2></div>
+        </div>
+        <div class="row">
+            <div id="subscription" class="text-center col border">
+                <ol>
+                    <li>Test1</li>
+                    <li>Test1</li>
+                    <li>Test1</li>
+                    <li>Test1</li>
+                </ol>
+            </div>
+            <div id="signUp" class="text-center col border">
+                <ol>
+                    <li>Test2</li>
+                    <li>Test2</li>
+                    <li>Test2</li>
+                    <li>Test2</li>
+                </ol>
+            </div>
+            <div id="logIn" class="text-center col border">
+                <ol>
+                    <li>Test3</li>
+                    <li>Test3</li>
+                    <li>Test3</li>
+                    <li>Test3</li>
+                </ol>
+            </div>
+        </div>
+        <script>
+            var switchArray = [document.getElementById('subscription'), sign = document.getElementById('signUp'), log = document.getElementById('logIn')];
+            var hide0 = switchArray[0].style.display = 'none', hide1 = switchArray[1].style.display = 'none', hide2 = switchArray[2].style.display = 'none'; 
+            switchArray[2].style.display = 'block';
+            function swap(number){
+                switch(number){
+                    case 0 :
+                        switchArray[0].style.display = 'block';
+                        switchArray[1].style.display = 'none'; 
+                        switchArray[2].style.display = 'none';
+                    break;
+                    case 1 :
+                        switchArray[0].style.display = 'none';
+                        switchArray[1].style.display = 'block'; 
+                        switchArray[2].style.display = 'none';
+                    break;
+                    case 2 :
+                        switchArray[0].style.display = 'none';
+                        switchArray[1].style.display = 'none'; 
+                        switchArray[2].style.display = 'block';
+                    break;
+                }
+            }
+        </script>
+    </body>
+</html>
