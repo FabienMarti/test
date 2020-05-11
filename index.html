@@ -11,7 +11,6 @@
         .container {
           width: 100%;
         }
-
       }
     </style>
   </head>
@@ -19,17 +18,17 @@
     <h1 class="text-center">TITRE</h1>
     <!--Boutons-->
     <div class="row text-center">
-      <div class="col-4 border m-auto" onclick="swap(0)">
-        <p class="h5">S'inscrire</p>
+      <div class="col-4 m-auto" onclick="swap(0)">
+        <p id="signUpTitle" class="h5">S'inscrire</p>
       </div>
-      <div class="col-4 border m-auto" onclick="swap(1)">
-        <p class="h5">Se connecter</p>
+      <div class="col-4 m-auto" onclick="swap(1)">
+        <p id="logInTitle" class="h5">Se connecter</p>
       </div>
     </div>
     
     <div class="row">
       <!--Enregistrement-->
-      <div id="signUp" class="text-center col border mt-5">
+      <div id="signUp" class="text-center col border border-dark mt-5">
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -78,7 +77,7 @@
         </form>
       </div>
       <!--Connexion-->
-      <div id="logIn" class="text-center col border mt-5">
+      <div id="logIn" class="text-center col border border-dark mt-5">
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -99,17 +98,25 @@
     </div>
     <script>
       var switchArray = [sign = document.getElementById('signUp'), log = document.getElementById('logIn')];
-      var hide0 = switchArray[0].style.display = 'none', hide1 = switchArray[1].style.display = 'none';
-      switchArray[1].style.display = 'block';
+      swap(1);
       function swap(number) {
         switch (number) {
           case 0:
             switchArray[0].style.display = 'block';
             switchArray[1].style.display = 'none';
+            document.getElementById('signUpTitle').style.color = 'black';
+            document.getElementById('logInTitle').style.color = 'grey';
+            document.getElementById('signUpTitle').classList.add('border-top', 'border-right', 'border-dark');
+            document.getElementById('logInTitle').classList.remove('border-top', 'border-left');
+
             break;
           case 1:
             switchArray[0].style.display = 'none';
             switchArray[1].style.display = 'block';
+            document.getElementById('signUpTitle').style.color = 'grey';
+            document.getElementById('logInTitle').style.color = 'black';
+            document.getElementById('logInTitle').classList.add('border-top', 'border-left', 'border-dark');
+            document.getElementById('signUpTitle').classList.remove('border-top', 'border-right');
             break;
         }
       }
